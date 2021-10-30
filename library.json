@@ -1,0 +1,22 @@
+{
+  "name": "ESP32BearSSL",
+  "description": "Implementation of the SSL/TLS protocol (RFC 5246)",
+  "keywords": "ESP32, SSL, TLS",
+  "authors": [
+    {
+      "name": "Jeroen Döll",
+      "maintainer": true
+    }
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/Jeroen88/ESP32BearSSL"
+  },
+  "frameworks": "arduino",
+  "examples": [
+    "examples/*/*.ino"
+  ],
+  "platforms": ["espressif32"],
+  "version": "0.1"
+}

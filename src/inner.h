@@ -305,6 +305,15 @@
 #endif
 
 /*
+ * Use ESP32 hardware random generator when possible.
+ */
+#ifndef BR_USE_ESP32_RAND
+#if defined(ESP32)
+#define BR_USE_ESP32_RAND 1
+#endif
+#endif
+
+/*
  * Determine type of OS for random number generation. Macro names and
  * values are documented on:
  *    https://sourceforge.net/p/predef/wiki/OperatingSystems/
@@ -437,7 +446,7 @@
  */
 
 #ifndef BR_USE_UNIX_TIME
-#if defined __unix__ || defined __linux__ \
+#if defined __unix__ || defined __linux__ || defined ESP32 \
 	|| defined _POSIX_SOURCE || defined _POSIX_C_SOURCE \
 	|| (defined __APPLE__ && defined __MACH__)
 #define BR_USE_UNIX_TIME   1

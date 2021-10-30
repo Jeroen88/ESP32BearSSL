@@ -147,6 +147,15 @@
  */
 
 /*
+ * When BR_USE_ESP32_RAND is enabled, use the void esp_fill_random(void *buf, size_t len) SDK call
+ * on the ESP32 as the entropy source, this calls uint32_t esp_random(void)
+ *
+ * Note: The hardware RNG produces true random numbers if the RF subsystem is enabled (i.e. Wi-Fi or Bluetooth are enabled).
+ *
+#define BR_USE_ESP32_RAND 1
+ */
+
+/*
  * When BR_USE_UNIX_TIME is enabled, the X.509 validation engine obtains
  * the current time from the OS by calling time(), and assuming that the
  * returned value (a 'time_t') is an integer that counts time in seconds
