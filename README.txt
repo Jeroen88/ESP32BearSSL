@@ -21,6 +21,8 @@ But first you have to create your Trust Anchor(-s) using
  - Paste the output into client_basic.ino, replacing the original Trust 
    Anchor
  - Run client_basic.ino
+The other functionaliity of bearssl.ino may work, however this is not
+tested.
 
 # Disclaimer
 
