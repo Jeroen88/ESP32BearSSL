@@ -3,6 +3,19 @@
 The most up-to-date documentation is supposed to be available on the
 [BearSSL Web site](https://www.bearssl.org/).
 
+# ESP32 ported version
+
+This library is the ported version of the original BearSSL library to the ESP32
+No attempt is made yet to make use of the hardware crypto accelerators of the ESP32
+To create your own sketch, take /examples/client_basic as a starting point.
+But first you have to create your Trust Anchor(-s) using /examples/bearssl.ino:
+ - Open the website that you want to read in your browser and download the root
+   CA certificate .pem file and upload it to the ESP32 in the sketch /data folder
+ - Edit bearssl.ino and replace 'google-com.pem' with your certificate filename
+ - Run bearssl.ino and copy the output
+ - Paste the output in client_basic.ino, replacing the original Trust Anchor
+ - Run client_basic.ino
+
 # Disclaimer
 
 BearSSL is considered beta-level software. Most planned functionalities
